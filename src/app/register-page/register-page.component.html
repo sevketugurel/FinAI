@@ -1,0 +1,77 @@
+<div class="container">
+  <div class="box">
+    
+    <div class="right">
+      <div class="subbox" >
+        <div>
+          <h1>REGİSTER</h1>
+        <p>Pleaser entry your information!</p>
+        <form [formGroup]="registerForm">
+          <mat-form-field class="example-full-width">
+            <mat-label>Name</mat-label>
+            <input class="example-input" type="email" matInput formControlName="name"
+              >
+            @if (getFormNameInvalid('name')) {
+            <mat-error>{{getErrorMessage("name")}}</mat-error>
+            }
+          
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Surname</mat-label>
+            <input class="example-input" type="email" matInput 
+            formControlName="surName">
+            @if (getFormNameInvalid('surName')) {
+            <mat-error>{{getErrorMessage("surName")}}</mat-error>
+            }
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input class="example-input" type="email" matInput formControlName="email"
+              placeholder="Ex. pat@example.com">
+            @if (getFormNameInvalid('email')) {
+            <mat-error>{{getErrorMessage("email")}}</mat-error>
+            }
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input class="example-input" type="password" matInput formControlName="password">
+            @if (getFormNameInvalid('password')) {
+            <mat-error>{{getErrorMessage("password")}}</mat-error>
+
+            }
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Password Again</mat-label>
+            <input class="example-input" type="password" matInput formControlName="passwordAgain">
+            @if (getFormNameInvalid('passwordAgain')) {
+            <mat-error>{{getErrorMessage("passwordAgain")}}</mat-error>
+
+            }
+          </mat-form-field>
+        </form>
+        <button (click)="register()" mat-raised-button color="primary" [disabled]="isDisable()" class="sig-in-btn" (click)="goToLogin()">Register</button>
+        <div class="linkler">
+          <button type="button" class="buttonLink">
+            <img src="https://freepngimg.com/save/67060-play-photos-search-google-account-png-file-hd/2400x2404">
+          </button>
+  
+          <button type="button" class="buttonLink">
+            <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/apple-icon.png">
+          </button>
+  
+          <button type="button" class="buttonLink">
+            <img src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/facebook_circle_color-512.png">
+          </button>
+        </div>
+      </div>
+    </div>
+        </div>
+        
+    <div class="left">
+      <img  src="assets/1.svg">
+    </div>
+  </div>  
+</div>
