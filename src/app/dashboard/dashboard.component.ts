@@ -3,6 +3,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import {MatIconModule} from '@angular/material/icon';
+
 import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
 import { NgApexchartsModule } from "ng-apexcharts"
 import {
@@ -22,15 +24,16 @@ import {
 import * as ApexCharts from 'apexcharts';
 import { Subscription, interval } from 'rxjs';
 import { data } from './series-data';
+import { SidebarComponent } from "../sidebar/sidebar.component";
 
 
 
 @Component({
-  selector: 'app-dashboard',
-  standalone: true,
-  imports: [NgApexchartsModule, MatInputModule, MatButtonModule, RouterOutlet, CommonModule, CanvasJSAngularChartsModule],
-  templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.scss'
+    selector: 'app-dashboard',
+    standalone: true,
+    templateUrl: './dashboard.component.html',
+    styleUrl: './dashboard.component.scss',
+    imports: [NgApexchartsModule,MatIconModule, MatInputModule, MatButtonModule, RouterOutlet, CommonModule, CanvasJSAngularChartsModule, SidebarComponent]
 })
 export class DashboardComponent {
 

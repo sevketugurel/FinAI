@@ -1,6 +1,13 @@
+
 <div class="box">
+
   <div class="top-tools">
     <div class="buttons">
+      <div class="example-button-container">
+        <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+          <i class="fa fa-user" aria-hidden="true"></i>
+        </button>
+      </div>
 
       <button mat-button>Piyasalar</button>
       <button mat-button>Favoriler</button>
@@ -15,67 +22,102 @@
   
   <div class="anlık-durumlar">
     <div class="parcalar">
-      <div>
-
+      <div class="enstrüman-ismi">XU100</div>
+      <div class="enstrüman">
+        <span>9344,65</span>
+        <span class="degisim"> %1.65</span>
       </div>
-      <div>
 
+    </div>
+
+    <div class="parcalar">
+      <div class="enstrüman-ismi">XU100</div>
+      <div class="enstrüman">
+        <span>9344,65</span>
+        <span class="degisim"> %1.65</span>
       </div>
 
     </div>
 
     <div class="parcalar">
-
-    </div>
-
-    <div class="parcalar">
-
-    </div>
-    <div class="parcalar">
-
+      <div class="enstrüman-ismi">XU100</div>
+      <div class="enstrüman">
+        <span>9344,65</span>
+        <span class="degisim"> %1.65</span>
+      </div>
     </div>
     <div class="parcalar">
-
+      <div class="enstrüman-ismi">XU100</div>
+      <div class="enstrüman">
+        <span>9344,65</span>
+        <span class="degisim"> %1.65</span>
+      </div>
+    </div>  
+    <div class="parcalar">
+      <div class="enstrüman-ismi">XU100</div>
+      <div class="enstrüman">
+        <span>9344,65</span>
+        <span class="degisim"> %1.65</span>
+      </div>
     </div>
     <div class="parcalar">
-
+      <div class="enstrüman-ismi">XU100</div>
+      <div class="enstrüman">
+        <span>9344,65</span>
+        <span class="degisim"> %1.65</span>
+      </div>
     </div>
     <div class="parcalar">
-
+      <div class="enstrüman-ismi">XU100</div>
+      <div class="enstrüman">
+        <span>9344,65</span>
+        <span class="degisim"> %1.65</span>
+      </div>
     </div>
     <div class="parcalar">
-
+      <div class="enstrüman-ismi">XU100</div>
+      <div class="enstrüman">
+        <span>9344,65</span>
+        <span class="degisim"> %1.65</span>
+      </div>
+    </div>
+    <div class="parcalar">
+      <div class="enstrüman-ismi">XU100</div>
+      <div class="enstrüman">
+        <span>9344,65</span>
+        <span class="degisim"> %1.65</span>
+      </div>
     </div>
 
   </div>
 
   <div class="charts">
     <div class="ChartDateTime">
-      <button
+      <button class="chart-button"
     (click)="updateOptions( '1m' )"
     [class.active]="activeOptionButton=='1m'"
   >
     1M
-  </button>
-  <button
+  </button >
+  <button class="chart-button"
     (click)="updateOptions( '6m' )"
     [class.active]="activeOptionButton=='6m'"
   >
     6M
   </button>
-  <button
+  <button class="chart-button"
     (click)="updateOptions( '1y' )"
     [class.active]="activeOptionButton=='1y'"
   >
     1Y
   </button>
-  <button
+  <button class="chart-button"
     (click)="updateOptions( '1yd' )"
     [class.active]="activeOptionButton=='1yd'"
   >
     1YD
   </button>
-  <button
+  <button class="chart-button"
     (click)="updateOptions( 'all' )"
     [class.active]="activeOptionButton=='all'"
   >
