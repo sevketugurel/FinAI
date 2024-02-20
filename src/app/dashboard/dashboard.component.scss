@@ -1,5 +1,6 @@
-.box{
+.box {
   background-color: #d8d8bb;
+  padding: 2%;
 }
 
 .buttons {
@@ -8,16 +9,21 @@
 }
 
 .top-tools {
-  padding: 2%;
+  padding-bottom: 2%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
 }
 
-// .earning-chart {
-//   display: flex;
-//   justify-content: flex-start;
-// }
+.earning-chart {
+  display: flex;
+  flex-direction: row-reverse;
+}
 
 .form {
-
+  margin-left: 0.75%;
+  width: 40%;
   position: relative;
 }
 
@@ -40,26 +46,16 @@
 
 }
 
-.left-pan {
-  padding-left: 7px;
-}
-
-.left-pan i {
-
-  padding-left: 10px;
-}
-
 .form-input {
-
   height: 55px;
   text-indent: 33px;
   border-radius: 10px;
 }
 
 .form-input:focus {
-
-  box-shadow: none;
-  border: none;
+  border: 1px solid #d8d8bb;
+  /* Border rengini ve kalınlığını ayarla */
+  box-shadow: 5px 5px 10px #888888;
 }
 
 .multiChart {
@@ -68,7 +64,83 @@
   height: '360px'
 
 }
+button {
+  background: #fff;
+  color: #222;
+  border: 1px solid #e7e7e7;
+  border-bottom: 2px solid #ddd;
+  border-radius: 2px;
+  padding: 4px 17px;
+}
+
+button.active {
+  color: #fff;
+  background: #008ffb;
+  border: 1px solid blue;
+  border-bottom: 2px solid blue;
+}
+
+button:focus {
+  outline: 0;
+}
+
+.ChartDateTime{
+  width: 100%;
+  padding: 2%;
+  border: 2px solid #d8d8bb;
+  box-shadow: 5px 5px 10px #888888;
+  background-color: rgb(217, 217, 201);
+  border-radius: 10px;
+}
+
+#chartbar {
+  width: 50%;
+  margin: 1%;
+  border: 2px solid #d8d8bb;
+  box-shadow: 5px 5px 10px #888888;
+  background-color: rgb(217, 217, 201);
+  border-radius: 10px;
+
+}
+
+#chartCol {
+  width: 60%;
+  padding: 2%;
+  margin: 1%;
+  border: 2px solid #d8d8bb;
+  box-shadow: 5px 5px 10px #888888;
+  background-color: rgb(217, 217, 201);
+  border-radius: 10px;
+}
+
 #chart {
-  max-width: 650px;
-  margin: 35px auto;
+  width: 30%;
+  border: 2px solid #d8d8bb;
+  box-shadow: 5px 5px 10px #888888;
+  background-color: rgb(217, 217, 201);
+  border-radius: 10px;
+}
+
+
+.anlık-durumlar {
+  height: 5vw;
+  margin: 1%;
+  border: 2px solid #d8d8bb;
+  box-shadow: 5px 5px 10px #888888;
+  background-color: rgb(217, 217, 201);
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+
+  .parcalar {
+    margin: 1%;
+    height: 3vw;
+    width: 10vw;
+    border: 2px solid #d8d8bb;
+    box-shadow: 5px 5px 10px #888888;
+    background-color: rgb(160, 160, 149);
+    border-radius: 10px;
+  }
 }
