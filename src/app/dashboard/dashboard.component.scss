@@ -95,8 +95,9 @@ button:focus {
 
 #chartbar {
   width: 50%;
-  margin: 1%;
-  border: 2px solid #d8d8bb;
+  margin-top: 1%;
+  margin-right: 1%;
+    border: 2px solid #d8d8bb;
   box-shadow: 5px 5px 10px #888888;
   background-color: rgb(217, 217, 201);
   border-radius: 10px;
@@ -106,7 +107,7 @@ button:focus {
 #chartCol {
   width: 60%;
   padding: 2%;
-  margin: 1%;
+  margin-top: 1%;
   border: 2px solid #d8d8bb;
   box-shadow: 5px 5px 10px #888888;
   background-color: rgb(217, 217, 201);
@@ -124,7 +125,7 @@ button:focus {
 
 .anlık-durumlar {
   height: 5vw;
-  margin: 1%;
+  margin-bottom: 1%;
   border: 2px solid #d8d8bb;
   box-shadow: 5px 5px 10px #888888;
   background-color: rgb(217, 217, 201);
