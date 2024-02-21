@@ -1,0 +1,54 @@
+.top-tools {
+  padding-bottom: 2%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+}
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+.form {
+  margin-left: 0.75%;
+  width: 40%;
+  position: relative;
+}
+
+.form .fa-search {
+
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #9ca3af;
+
+}
+
+.form span {
+
+  position: absolute;
+  right: 17px;
+  top: 13px;
+  padding: 2px;
+  border-left: 1px solid #d1d5db;
+
+}
+
+.form-input {
+  height: 55px;
+  text-indent: 33px;
+  border-radius: 10px;
+}
+
+.form-input:focus {
+  border: 1px solid #d8d8bb;
+  /* Border rengini ve kalınlığını ayarla */
+  box-shadow: 5px 5px 10px #888888;
+}

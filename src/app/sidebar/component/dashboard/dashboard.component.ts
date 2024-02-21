@@ -1,9 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 
 import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
 import { NgApexchartsModule } from "ng-apexcharts"
@@ -24,7 +24,10 @@ import {
 import * as ApexCharts from 'apexcharts';
 import { Subscription, interval } from 'rxjs';
 import { data } from './series-data';
-import { SidebarComponent } from "../sidebar/sidebar.component";
+import { SidebarComponent } from "../../sidebar.component";
+import { FollowedComponent } from "./followed/followed.component";
+import { routes } from '../../../app.routes';
+import { NavbarComponent } from "../../../navbar/navbar.component";
 
 
 
@@ -33,9 +36,10 @@ import { SidebarComponent } from "../sidebar/sidebar.component";
     standalone: true,
     templateUrl: './dashboard.component.html',
     styleUrl: './dashboard.component.scss',
-    imports: [NgApexchartsModule,MatIconModule, MatInputModule, MatButtonModule, RouterOutlet, CommonModule, CanvasJSAngularChartsModule, SidebarComponent]
+    imports: [NgApexchartsModule, MatIconModule, MatInputModule, MatButtonModule, RouterOutlet, CommonModule, CanvasJSAngularChartsModule, SidebarComponent, FollowedComponent, NavbarComponent]
 })
 export class DashboardComponent {
+  
 
   @ViewChild("chart") chart: ChartComponent | any;
   public chartOptions: Partial<ChartOptions>;
@@ -81,9 +85,9 @@ export class DashboardComponent {
       }
     }
   };
+  
 
-
-  constructor() {
+  constructor(private _routes: Router) {
     this.chartOptions = {
       series: [
         {
@@ -496,19 +500,19 @@ interface Xaxis {
 
 
 export type ChartOptions4 = {
-  series: ApexAxisChartSeries|any;
-  chart: ApexChart|any
-  dataLabels: ApexDataLabels|any;
-  markers: ApexMarkers|any;
-  title: ApexTitleSubtitle|any;
-  fill: ApexFill|any;
-  yaxis: ApexYAxis|any;
-  xaxis: ApexXAxis|any;
-  tooltip: ApexTooltip|any;
-  stroke: ApexStroke|any;
-  annotations: ApexAnnotations|any;
+  series: ApexAxisChartSeries | any;
+  chart: ApexChart | any
+  dataLabels: ApexDataLabels | any;
+  markers: ApexMarkers | any;
+  title: ApexTitleSubtitle | any;
+  fill: ApexFill | any;
+  yaxis: ApexYAxis | any;
+  xaxis: ApexXAxis | any;
+  tooltip: ApexTooltip | any;
+  stroke: ApexStroke | any;
+  annotations: ApexAnnotations | any;
   colors: any;
-  grid:ApexGrid;
+  grid: ApexGrid;
   toolbar: any;
 };
 export type ChartOptions3 = {

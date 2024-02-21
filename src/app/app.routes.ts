@@ -3,8 +3,9 @@ import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { RegisterPageComponent } from './register-page/register-page.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { HomeComponent } from './home/home.component';
+import { DashboardComponent } from './sidebar/component/dashboard/dashboard.component';
+import { FollowedComponent } from './sidebar/component/dashboard/followed/followed.component';
+import { MarketsComponent } from './sidebar/component/dashboard/markets/markets.component';
 
 export const routes: Routes = [
   {path:"",component:LoginPageComponent},
@@ -12,4 +13,6 @@ export const routes: Routes = [
   {path:"register",component:RegisterPageComponent},
   {path:"sidebar",component:SidebarComponent},
   {path:"dashboard",component:DashboardComponent},
+  {path:"followed",component:FollowedComponent},
+  {path:"markets",component:MarketsComponent},
 ];
