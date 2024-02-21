@@ -1,14 +1,16 @@
 <div class="top-tools">
   <div class="buttons">
     <div class="example-button-container">
-      <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+      <button  mat-icon-button color="primary" [matMenuTriggerFor]="menu"   #menuTrigger aria-label="Example icon button with a home icon">
         <i class="fa fa-user" aria-hidden="true"></i>
       </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="openDialogUser()">Çıkış Yap</button>
+        </mat-menu>
     </div>
-
     <button mat-button (click)="goToMarktes()">Piyasalar</button>
     <button mat-button (click)="goToFollows()">Takip Edilenler</button>
-    <button mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+    <button mat-icon-button aria-label="Example icon button with a vertical three dot icon" (click)="openDialog()">
       <i style='font-size:24px' class='fas'>&#xf0f3;</i>
     </button>
   </div>

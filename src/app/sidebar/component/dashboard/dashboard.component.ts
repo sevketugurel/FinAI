@@ -4,7 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { Router, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
-
+import { MatDialogModule } from '@angular/material/dialog';
 import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
 import { NgApexchartsModule } from "ng-apexcharts"
 import {
@@ -26,20 +26,31 @@ import { Subscription, interval } from 'rxjs';
 import { data } from './series-data';
 import { SidebarComponent } from "../../sidebar.component";
 import { FollowedComponent } from "./followed/followed.component";
-import { routes } from '../../../app.routes';
 import { NavbarComponent } from "../../../navbar/navbar.component";
+import {
+  MatDialog,
+  MatDialogActions,
+  MatDialogClose,
+  MatDialogContent,
+  MatDialogTitle,
+} from '@angular/material/dialog';
+import { AlertDialogComponent } from '../../../dialogs/alert-dialog/alert-dialog.component';
+import { StocksDialogComponent } from '../../../dialogs/stocks-dialog/stocks-dialog.component';
 
 
 
 @Component({
-    selector: 'app-dashboard',
-    standalone: true,
-    templateUrl: './dashboard.component.html',
-    styleUrl: './dashboard.component.scss',
-    imports: [NgApexchartsModule, MatIconModule, MatInputModule, MatButtonModule, RouterOutlet, CommonModule, CanvasJSAngularChartsModule, SidebarComponent, FollowedComponent, NavbarComponent]
+  selector: 'app-dashboard',
+  standalone: true,
+  templateUrl: './dashboard.component.html',
+  styleUrl: './dashboard.component.scss',
+  imports: [NgApexchartsModule, MatIconModule, MatInputModule, MatButtonModule, RouterOutlet, CommonModule, CanvasJSAngularChartsModule, SidebarComponent, FollowedComponent, NavbarComponent, MatDialogModule,]
 })
 export class DashboardComponent {
-  
+  openDialogStock() {
+    this._dialog.open(StocksDialogComponent)
+  }
+
 
   @ViewChild("chart") chart: ChartComponent | any;
   public chartOptions: Partial<ChartOptions>;
@@ -85,9 +96,11 @@ export class DashboardComponent {
       }
     }
   };
-  
+  openDialog() {
+    this._dialog.open(AlertDialogComponent);
+  }
 
-  constructor(private _routes: Router) {
+  constructor(private _routes: Router, private _dialog: MatDialog) {
     this.chartOptions = {
       series: [
         {
