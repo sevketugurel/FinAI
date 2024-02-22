@@ -60,3 +60,8 @@ tr.example-element-row:not(.example-expanded-row):active {
   background-color: rgb(217, 217, 201);
   border-radius: 10px;
 }
+
+.info-and-alert{
+  display: flex;
+  align-items: center;
+}

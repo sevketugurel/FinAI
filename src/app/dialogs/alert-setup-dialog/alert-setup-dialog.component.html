@@ -1,0 +1,12 @@
+<h2 mat-dialog-title>Fiyat Alarmı</h2>
+<mat-dialog-content>
+  <p>Hangi fiyata alarm kurmak istiyorsunuz?</p>
+  <mat-form-field>
+    <mat-label>Fiyat</mat-label>
+    <input matInput [(ngModel)]="data.animal">
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Çıkış</button>
+  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial (click)="alarmKur()">Alarm Kur</button>
+</mat-dialog-actions>

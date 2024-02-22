@@ -1,5 +1,20 @@
-<h2 mat-dialog-title>Dialog with elements</h2>
-<mat-dialog-content>This dialog showcases the title, close, content and actions elements.</mat-dialog-content>
-<mat-dialog-actions>
-  <button mat-button mat-dialog-close>Close</button>
-</mat-dialog-actions>
+
+<div class="content">
+  <h2 mat-dialog-title>Dialog with elements</h2>
+  <mat-dialog-content ><!--The content below is only a placeholder and can be replaced.-->
+    <div id="chart">
+      <apx-chart
+        [series]="chartOptions.series"
+        [chart]="chartOptions.chart"
+        [xaxis]="chartOptions.xaxis"
+        [yaxis]="chartOptions.yaxis"
+        [title]="chartOptions.title"
+        [tooltip]="chartOptions.tooltip"
+      ></apx-chart>
+    </div>
+    </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button mat-dialog-close>Close</button>
+  </mat-dialog-actions>
+
+</div>

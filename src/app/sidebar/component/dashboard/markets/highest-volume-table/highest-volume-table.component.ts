@@ -3,6 +3,8 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
+import { MatDialog } from '@angular/material/dialog';
+import { AlertSetupDialogComponent } from '../../../../../dialogs/alert-setup-dialog/alert-setup-dialog.component';
 @Component({
   selector: 'app-highest-volume-table',
   animations: [
@@ -18,6 +20,18 @@ import { MatTableModule } from '@angular/material/table';
   styleUrl: './highest-volume-table.component.scss'
 })
 export class HighestVolumeTableComponent {
+  constructor(public dialog: MatDialog) {}
+
+  openDialogAlert(): void {
+    const dialogRef = this.dialog.open(AlertSetupDialogComponent, {
+      
+    });
+    
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      
+    });
+  }
   dataSource = ELEMENT_DATA;
   columnsToDisplay = ['name', 'weight', 'symbol', 'position'];
   columnsToDisplayWithExpand = [...this.columnsToDisplay, 'expand'];

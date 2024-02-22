@@ -3,6 +3,8 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
+import { MatDialog } from '@angular/material/dialog';
+import { AlertSetupDialogComponent } from '../../../../../dialogs/alert-setup-dialog/alert-setup-dialog.component';
 
 @Component({
   selector: 'app-top-losers-table',
@@ -19,10 +21,24 @@ import { MatTableModule } from '@angular/material/table';
   styleUrl: './top-losers-table.component.scss'
 })
 export class TopLosersTableComponent {
+
   dataSource = ELEMENT_DATA;
   columnsToDisplay = ['name', 'weight', 'symbol', 'position'];
   columnsToDisplayWithExpand = [...this.columnsToDisplay, 'expand'];
   expandedElement: PeriodicElement | any;
+
+  constructor(public dialog: MatDialog) { }
+
+  openDialogAlert(): void {
+    console.log("tiklandi");
+
+    const dialogRef = this.dialog.open(AlertSetupDialogComponent, {
+    });
+
+    dialogRef.afterClosed().subscribe((result: any) => {
+      console.log('The dialog was closed');
+    });
+  }
 }
 
 export interface PeriodicElement {

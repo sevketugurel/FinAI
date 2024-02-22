@@ -3,6 +3,8 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
+import { AlertSetupDialogComponent } from '../../../../../dialogs/alert-setup-dialog/alert-setup-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-top-gainers-table',
@@ -19,6 +21,20 @@ import { MatTableModule } from '@angular/material/table';
   styleUrl: './top-gainers-table.component.scss'
 })
 export class TopGainersTableComponent {
+
+
+  constructor(public dialog: MatDialog) {}
+
+  openDialogAlert(): void {
+    console.log("tiklandi");
+    
+    const dialogRef = this.dialog.open(AlertSetupDialogComponent, {
+    });
+
+    dialogRef.afterClosed().subscribe((result: any) => {
+      console.log('The dialog was closed');
+    });
+  }
   dataSource = ELEMENT_DATA;
   columnsToDisplay = ['name', 'weight', 'symbol', 'position'];
   columnsToDisplayWithExpand = [...this.columnsToDisplay, 'expand'];

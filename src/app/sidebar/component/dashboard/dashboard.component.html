@@ -1,169 +1,171 @@
-
-<div class="box">
-
-  <app-navbar></app-navbar>
+<div>
+  <!-- <app-sidebar></app-sidebar> -->
+  <div class="box">
   
-  <div class="anlık-durumlar">
-    <div class="parcalar" (click)="openDialogStock()">
-      <div class="enstrüman-ismi" >XU100</div>
-      <div class="enstrüman">
-        <span>9344,65</span>
-        <span class="degisim"> %1.65</span>
-      </div>
-
-    </div>
-
-    <div class="parcalar">
-      <div class="enstrüman-ismi">XU100</div>
-      <div class="enstrüman">
-        <span>9344,65</span>
-        <span class="degisim"> %1.65</span>
-      </div>
-
-    </div>
-
-    <div class="parcalar">
-      <div class="enstrüman-ismi">XU100</div>
-      <div class="enstrüman">
-        <span>9344,65</span>
-        <span class="degisim"> %1.65</span>
-      </div>
-    </div>
-    <div class="parcalar">
-      <div class="enstrüman-ismi">XU100</div>
-      <div class="enstrüman">
-        <span>9344,65</span>
-        <span class="degisim"> %1.65</span>
-      </div>
-    </div>  
-    <div class="parcalar">
-      <div class="enstrüman-ismi">XU100</div>
-      <div class="enstrüman">
-        <span>9344,65</span>
-        <span class="degisim"> %1.65</span>
-      </div>
-    </div>
-    <div class="parcalar">
-      <div class="enstrüman-ismi">XU100</div>
-      <div class="enstrüman">
-        <span>9344,65</span>
-        <span class="degisim"> %1.65</span>
-      </div>
-    </div>
-    <div class="parcalar">
-      <div class="enstrüman-ismi">XU100</div>
-      <div class="enstrüman">
-        <span>9344,65</span>
-        <span class="degisim"> %1.65</span>
-      </div>
-    </div>
-    <div class="parcalar">
-      <div class="enstrüman-ismi">XU100</div>
-      <div class="enstrüman">
-        <span>9344,65</span>
-        <span class="degisim"> %1.65</span>
-      </div>
-    </div>
-    <div class="parcalar">
-      <div class="enstrüman-ismi">XU100</div>
-      <div class="enstrüman">
-        <span>9344,65</span>
-        <span class="degisim"> %1.65</span>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="charts">
-    <div class="ChartDateTime">
-      <button class="chart-button"
-    (click)="updateOptions( '1m' )"
-    [class.active]="activeOptionButton=='1m'"
-  >
-    1M
-  </button >
-  <button class="chart-button"
-    (click)="updateOptions( '6m' )"
-    [class.active]="activeOptionButton=='6m'"
-  >
-    6M
-  </button>
-  <button class="chart-button"
-    (click)="updateOptions( '1y' )"
-    [class.active]="activeOptionButton=='1y'"
-  >
-    1Y
-  </button>
-  <button class="chart-button"
-    (click)="updateOptions( '1yd' )"
-    [class.active]="activeOptionButton=='1yd'"
-  >
-    1YD
-  </button>
-  <button class="chart-button"
-    (click)="updateOptions( 'all' )"
-    [class.active]="activeOptionButton=='all'"
-  >
-    All
-  </button>
-  <apx-chart
-    #chart
-    [series]="ChartOptions4?.series"
-    [chart]="ChartOptions4?.chart"
-    [colors]="ChartOptions4?.colors"
-    [yaxis]="ChartOptions4?.yaxis"
-    [dataLabels]="ChartOptions4?.dataLabels"
-    [markers]="ChartOptions4?.markers"
-    [stroke]="ChartOptions4?.stroke"
-    [grid]="ChartOptions4?.grid"
-    [xaxis]="ChartOptions4?.xaxis"
-    [tooltip]="ChartOptions4?.tooltip"
-    [annotations]="ChartOptions4?.annotations"
-  ></apx-chart>
-  
-    </div>
-    <div class="earning-chart">
-      <div id="chartCol">
-        <apx-chart 
-        [series]="chartOptions.series" 
-        [chart]="chartOptions.chart" 
-        [dataLabels]="chartOptions.dataLabels"
-          [plotOptions]="chartOptions.plotOptions"
-          [xaxis]="chartOptions.xaxis" 
-          [colors]="chartOptions.colors"
-          [fill]="chartOptions.fill" 
-          [yaxis]="chartOptions.yaxis" 
-          [legend]="chartOptions.legend"
-          [grid]="chartOptions.grid"></apx-chart>
-      </div>
-
-      <div id="chartbar">
-        <apx-chart 
-        [series]="chartOptions2.series" 
-        [chart]="chartOptions2.chart" 
-        [legend]="chartOptions2.legend"
-        [dataLabels]="chartOptions2.dataLabels" 
-        [colors]="chartOptions2.colors"
-        [plotOptions]="chartOptions2.plotOptions"></apx-chart>
-      </div>
-      
-    </div>
-    <div>
-
-      <div id="chart">
-        <apx-chart
-          [series]="ChartOptions3.series"
-          [chart]="ChartOptions3.chart"
-          [dataLabels]="ChartOptions3.dataLabels"
-          [plotOptions]="ChartOptions3.plotOptions"
-          [title]="ChartOptions3.title"
-          [legend]="ChartOptions3.legend"
-        ></apx-chart>
-      </div>
-    </div>
-    <app-followed></app-followed>
+    <app-navbar></app-navbar>
     
-
-
+    <div class="anlık-durumlar">
+      <div class="parcalar" (click)="openDialogStock()">
+        <div class="enstrüman-ismi" >XU100</div>
+        <div class="enstrüman">
+          <span>9344,65</span>
+          <span class="degisim"> %1.65</span>
+        </div>
+  
+      </div>
+  
+      <div class="parcalar">
+        <div class="enstrüman-ismi">XU100</div>
+        <div class="enstrüman">
+          <span>9344,65</span>
+          <span class="degisim"> %1.65</span>
+        </div>
+  
+      </div>
+  
+      <div class="parcalar">
+        <div class="enstrüman-ismi">XU100</div>
+        <div class="enstrüman">
+          <span>9344,65</span>
+          <span class="degisim"> %1.65</span>
+        </div>
+      </div>
+      <div class="parcalar">
+        <div class="enstrüman-ismi">XU100</div>
+        <div class="enstrüman">
+          <span>9344,65</span>
+          <span class="degisim"> %1.65</span>
+        </div>
+      </div>  
+      <div class="parcalar">
+        <div class="enstrüman-ismi">XU100</div>
+        <div class="enstrüman">
+          <span>9344,65</span>
+          <span class="degisim"> %1.65</span>
+        </div>
+      </div>
+      <div class="parcalar">
+        <div class="enstrüman-ismi">XU100</div>
+        <div class="enstrüman">
+          <span>9344,65</span>
+          <span class="degisim"> %1.65</span>
+        </div>
+      </div>
+      <div class="parcalar">
+        <div class="enstrüman-ismi">XU100</div>
+        <div class="enstrüman">
+          <span>9344,65</span>
+          <span class="degisim"> %1.65</span>
+        </div>
+      </div>
+      <div class="parcalar">
+        <div class="enstrüman-ismi">XU100</div>
+        <div class="enstrüman">
+          <span>9344,65</span>
+          <span class="degisim"> %1.65</span>
+        </div>
+      </div>
+      <div class="parcalar">
+        <div class="enstrüman-ismi">XU100</div>
+        <div class="enstrüman">
+          <span>9344,65</span>
+          <span class="degisim"> %1.65</span>
+        </div>
+      </div>
+  
+    </div>
+  
+    <div class="charts">
+      <div class="ChartDateTime">
+        <button class="chart-button"
+      (click)="updateOptions( '1m' )"
+      [class.active]="activeOptionButton=='1m'"
+    >
+      1M
+    </button >
+    <button class="chart-button"
+      (click)="updateOptions( '6m' )"
+      [class.active]="activeOptionButton=='6m'"
+    >
+      6M
+    </button>
+    <button class="chart-button"
+      (click)="updateOptions( '1y' )"
+      [class.active]="activeOptionButton=='1y'"
+    >
+      1Y
+    </button>
+    <button class="chart-button"
+      (click)="updateOptions( '1yd' )"
+      [class.active]="activeOptionButton=='1yd'"
+    >
+      1YD
+    </button>
+    <button class="chart-button"
+      (click)="updateOptions( 'all' )"
+      [class.active]="activeOptionButton=='all'"
+    >
+      All
+    </button>
+    <apx-chart
+      #chart
+      [series]="ChartOptions4?.series"
+      [chart]="ChartOptions4?.chart"
+      [colors]="ChartOptions4?.colors"
+      [yaxis]="ChartOptions4?.yaxis"
+      [dataLabels]="ChartOptions4?.dataLabels"
+      [markers]="ChartOptions4?.markers"
+      [stroke]="ChartOptions4?.stroke"
+      [grid]="ChartOptions4?.grid"
+      [xaxis]="ChartOptions4?.xaxis"
+      [tooltip]="ChartOptions4?.tooltip"
+      [annotations]="ChartOptions4?.annotations"
+    ></apx-chart>
+    
+      </div>
+      <div class="earning-chart">
+        <div id="chartCol">
+          <apx-chart 
+          [series]="chartOptions.series" 
+          [chart]="chartOptions.chart" 
+          [dataLabels]="chartOptions.dataLabels"
+            [plotOptions]="chartOptions.plotOptions"
+            [xaxis]="chartOptions.xaxis" 
+            [colors]="chartOptions.colors"
+            [fill]="chartOptions.fill" 
+            [yaxis]="chartOptions.yaxis" 
+            [legend]="chartOptions.legend"
+            [grid]="chartOptions.grid"></apx-chart>
+        </div>
+  
+        <div id="chartbar">
+          <apx-chart 
+          [series]="chartOptions2.series" 
+          [chart]="chartOptions2.chart" 
+          [legend]="chartOptions2.legend"
+          [dataLabels]="chartOptions2.dataLabels" 
+          [colors]="chartOptions2.colors"
+          [plotOptions]="chartOptions2.plotOptions"></apx-chart>
+        </div>
+        
+      </div>
+      <div>
+  
+        <div id="chart">
+          <apx-chart
+            [series]="ChartOptions3.series"
+            [chart]="ChartOptions3.chart"
+            [dataLabels]="ChartOptions3.dataLabels"
+            [plotOptions]="ChartOptions3.plotOptions"
+            [title]="ChartOptions3.title"
+            [legend]="ChartOptions3.legend"
+          ></apx-chart>
+        </div>
+      </div>
+      <app-followed></app-followed>
+      
+  
+  
+    </div>
   </div>
 </div>
