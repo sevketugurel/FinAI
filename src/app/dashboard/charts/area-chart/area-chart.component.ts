@@ -34,11 +34,11 @@ export class AreaChartComponent {
     this.chartOptions = {
       series: [
         {
-          name: "series1",
+          name: "XU100",
           data: [31, 40, 28, 51, 42, 109, 100]
         },
         {
-          name: "series2",
+          name: "USD",
           data: [11, 32, 45, 32, 34, 52, 41]
         }
       ],
@@ -55,13 +55,13 @@ export class AreaChartComponent {
       xaxis: {
         type: "datetime",
         categories: [
-          "2018-09-19T00:00:00.000Z",
-          "2018-09-19T01:30:00.000Z",
-          "2018-09-19T02:30:00.000Z",
-          "2018-09-19T03:30:00.000Z",
-          "2018-09-19T04:30:00.000Z",
-          "2018-09-19T05:30:00.000Z",
-          "2018-09-19T06:30:00.000Z"
+          "2023-08",
+          "2023-09",
+          "2023-10",
+          "2023-11",
+          "2023-12",
+          "2024-01",
+          "2024-02",
         ]
       },
       tooltip: {

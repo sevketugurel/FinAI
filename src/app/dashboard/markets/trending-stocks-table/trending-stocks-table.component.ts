@@ -3,10 +3,11 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
+import { AlertSetupDialogComponent } from '../../../dialogs/alert-setup-dialog/alert-setup-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
-import { AlertSetupDialogComponent } from '../../../../../dialogs/alert-setup-dialog/alert-setup-dialog.component';
+
 @Component({
-  selector: 'app-highest-volume-table',
+  selector: 'app-trending-stocks-table',
   animations: [
     trigger('detailExpand', [
       state('collapsed,void', style({ height: '0px', minHeight: '0' })),
@@ -16,26 +17,28 @@ import { AlertSetupDialogComponent } from '../../../../../dialogs/alert-setup-di
   ],
   standalone: true,
   imports: [MatTableModule, MatButtonModule, MatIconModule],
-  templateUrl: './highest-volume-table.component.html',
-  styleUrl: './highest-volume-table.component.scss'
+  templateUrl: './trending-stocks-table.component.html',
+  styleUrl: './trending-stocks-table.component.scss'
 })
-export class HighestVolumeTableComponent {
-  constructor(public dialog: MatDialog) {}
-
-  openDialogAlert(): void {
-    const dialogRef = this.dialog.open(AlertSetupDialogComponent, {
-      
-    });
-    
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      
-    });
-  }
+export class TrendingStocksTableComponent {
+  
   dataSource = ELEMENT_DATA;
   columnsToDisplay = ['name', 'weight', 'symbol', 'position'];
   columnsToDisplayWithExpand = [...this.columnsToDisplay, 'expand'];
   expandedElement: PeriodicElement | any;
+
+  constructor(public dialog: MatDialog) {}
+
+  openDialogAlert(): void {
+    console.log("tiklandi");
+    
+    const dialogRef = this.dialog.open(AlertSetupDialogComponent, {
+    });
+
+    dialogRef.afterClosed().subscribe((result: any) => {
+      console.log('The dialog was closed');
+    });
+  }
 }
 
 export interface PeriodicElement {

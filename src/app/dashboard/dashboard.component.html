@@ -1,0 +1,42 @@
+<div>
+  <!-- <app-sidebar></app-sidebar> -->
+  <div class="box">
+    <div class="anlık-durumlar">
+      @for (stock of data; track $index) {
+        <div class="parcalar" (click)="openDialogStock()">
+          <div class="enstrüman-ismi">{{stock.name}}</div>
+          <div class="enstrüman">
+            <span>{{stock.price}}</span>
+            <span class="degisim" [style.color]="stock.changing < 0 ? '#800000' : '#0d730d'">
+              {{stock.changing}}
+            </span>
+          </div>
+        </div>
+      }
+      
+      
+    </div>
+
+    <div class="charts">
+      <div class="ChartDateTime">
+        <h2>XU100</h2>
+
+        <app-date-time-area-chart></app-date-time-area-chart>
+
+      </div>
+
+      <div class="earning-chart">
+        <div>
+          <app-column-chart></app-column-chart>
+        </div>
+        <div>
+          <app-area-chart></app-area-chart>
+        </div>
+      </div>
+      <div>
+
+        <app-followed></app-followed>
+
+      </div>
+    </div>
+  </div>

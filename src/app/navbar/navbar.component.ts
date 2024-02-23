@@ -8,6 +8,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { AlertDialogComponent } from '../dialogs/alert-dialog/alert-dialog.component';
 import { MatMenuModule, MatMenuTrigger } from '@angular/material/menu';
 import { UserMenuDialogComponent } from '../dialogs/user-menu-dialog/user-menu-dialog.component';
+import { routes } from '../app.routes';
 
 
 @Component({
@@ -18,6 +19,9 @@ import { UserMenuDialogComponent } from '../dialogs/user-menu-dialog/user-menu-d
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
+  goToDashboard() {
+    this._routes.navigateByUrl("dashboard")
+  }
   openDialog() {
     this._dialog.open(AlertDialogComponent)
   }

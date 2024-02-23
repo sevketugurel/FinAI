@@ -1,4 +1,4 @@
-<div class="top-tools">
+<div class="navbar">
   <div class="buttons">
     <div class="example-button-container">
       <button  mat-icon-button color="primary" [matMenuTriggerFor]="menu"   #menuTrigger aria-label="Example icon button with a home icon">
@@ -8,8 +8,9 @@
           <button mat-menu-item (click)="openDialogUser()">Çıkış Yap</button>
         </mat-menu>
     </div>
-    <button mat-button (click)="goToMarktes()">Piyasalar</button>
     <button mat-button (click)="goToFollows()">Takip Edilenler</button>
+    <button mat-button (click)="goToFollows()">Takip Edilenler</button>
+    <button mat-button (click)="goToMarktes()">Piyasalar</button>
     <button mat-icon-button aria-label="Example icon button with a vertical three dot icon" (click)="openDialog()">
       <i style='font-size:24px' class='fas'>&#xf0f3;</i>
     </button>
@@ -20,4 +21,5 @@
     <input type="text" class="form-control form-input" placeholder="Search anything...">
     <span class="left-pan"><i class="fa fa-microphone"></i></span>
   </div>
+  <a mat-raised-button (click)="goToDashboard()">Ana Sayfa</a>
 </div>

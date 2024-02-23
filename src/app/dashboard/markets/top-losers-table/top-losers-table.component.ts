@@ -3,11 +3,11 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
-import { AlertSetupDialogComponent } from '../../../../../dialogs/alert-setup-dialog/alert-setup-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
+import { AlertSetupDialogComponent } from '../../../dialogs/alert-setup-dialog/alert-setup-dialog.component';
 
 @Component({
-  selector: 'app-top-gainers-table',
+  selector: 'app-top-losers-table',
   animations: [
     trigger('detailExpand', [
       state('collapsed,void', style({ height: '0px', minHeight: '0' })),
@@ -17,17 +17,21 @@ import { MatDialog } from '@angular/material/dialog';
   ],
   standalone: true,
   imports: [MatTableModule, MatButtonModule, MatIconModule],
-  templateUrl: './top-gainers-table.component.html',
-  styleUrl: './top-gainers-table.component.scss'
+  templateUrl: './top-losers-table.component.html',
+  styleUrl: './top-losers-table.component.scss'
 })
-export class TopGainersTableComponent {
+export class TopLosersTableComponent {
 
+  dataSource = ELEMENT_DATA;
+  columnsToDisplay = ['name', 'weight', 'symbol', 'position'];
+  columnsToDisplayWithExpand = [...this.columnsToDisplay, 'expand'];
+  expandedElement: PeriodicElement | any;
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog) { }
 
   openDialogAlert(): void {
     console.log("tiklandi");
-    
+
     const dialogRef = this.dialog.open(AlertSetupDialogComponent, {
     });
 
@@ -35,10 +39,6 @@ export class TopGainersTableComponent {
       console.log('The dialog was closed');
     });
   }
-  dataSource = ELEMENT_DATA;
-  columnsToDisplay = ['name', 'weight', 'symbol', 'position'];
-  columnsToDisplayWithExpand = [...this.columnsToDisplay, 'expand'];
-  expandedElement: PeriodicElement | any;
 }
 
 export interface PeriodicElement {
