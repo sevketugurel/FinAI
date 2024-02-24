@@ -4,13 +4,14 @@ import { HighestVolumeTableComponent } from './highest-volume-table/highest-volu
 import { TopLosersTableComponent } from './top-losers-table/top-losers-table.component';
 import { TrendingStocksTableComponent } from './trending-stocks-table/trending-stocks-table.component';
 import { NavbarComponent } from "../../navbar/navbar.component";
+import { SidebarComponent } from "../../sidebar/sidebar.component";
 
 @Component({
     selector: 'app-markets',
     standalone: true,
     templateUrl: './markets.component.html',
     styleUrl: './markets.component.scss',
-    imports: [TopGainersTableComponent, HighestVolumeTableComponent, TopLosersTableComponent, TrendingStocksTableComponent, NavbarComponent]
+    imports: [TopGainersTableComponent, HighestVolumeTableComponent, TopLosersTableComponent, TrendingStocksTableComponent, NavbarComponent, SidebarComponent]
 })
 export class MarketsComponent {
  

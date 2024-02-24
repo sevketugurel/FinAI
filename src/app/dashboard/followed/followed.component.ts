@@ -9,13 +9,14 @@ import {FormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { followedStockData } from './data-series';
+import { SidebarComponent } from "../../sidebar/sidebar.component";
 
 @Component({
     selector: 'app-followed',
     standalone: true,
     templateUrl: './followed.component.html',
     styleUrl: './followed.component.scss',
-    imports: [FormsModule,MatFormFieldModule,MatInputModule,MatTableModule, MatPaginatorModule, MatButtonModule, NavbarComponent,]
+    imports: [FormsModule, MatFormFieldModule, MatInputModule, MatTableModule, MatPaginatorModule, MatButtonModule, NavbarComponent, SidebarComponent]
 })
 
 

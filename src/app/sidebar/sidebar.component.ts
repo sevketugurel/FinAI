@@ -3,16 +3,25 @@ import { Router } from '@angular/router';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
+import { LoginService } from '../services/login.service';
+
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [MatSidenavModule, MatCheckboxModule, FormsModule],
+  imports: [MatSidenavModule, MatButtonModule, MatCheckboxModule, FormsModule],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'
 })
 export class SidebarComponent {
-  constructor(private _routes: Router) { }
+  goTomarkets() {
+    this._routes.navigateByUrl("markets")
+  }
+  goToLogin() {
+    this._routes.navigateByUrl("login")
+    this._loginService.isLogin = false
+  }
+  constructor(private _routes: Router, private _loginService: LoginService) { }
   openDashboard() {
     this._routes.navigateByUrl("dashboard")
   }

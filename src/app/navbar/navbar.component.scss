@@ -1,7 +1,7 @@
 .navbar {
   position: sticky;
   top: 0;
-  z-index: 1000; /* İhtiyaca bağlı olarak ayarlayabilirsiniz */
+  z-index: 1000;
   padding-bottom: 2%;
   display: flex;
   flex-direction: row-reverse;
@@ -10,7 +10,7 @@
   background-color: #d8d8bb;
   margin-top: 1%;
   padding: 1%;
-  border-bottom: 1px solid #ccc; /* İhtiyaca bağlı olarak ayarlayabilirsiniz */
+  border-bottom: 1px solid #ccc;
 }
 
 .example-button-container {
@@ -59,6 +59,19 @@
 
 .form-input:focus {
   border: 1px solid #d8d8bb;
-  /* Border rengini ve kalınlığını ayarla */
   box-shadow: 5px 5px 10px #888888;
+}
+
+.image {
+  border: 1px solid #d8d8bb;
+  box-shadow: 5px 5px 10px #888888;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-left: 1%;
+}
+
+.image img {
+  width: 150px;
+  height: 80px;
+  border-radius: 10px;
 }

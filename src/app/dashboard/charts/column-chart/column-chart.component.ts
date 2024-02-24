@@ -44,7 +44,7 @@ export class ColumnChartComponent {
       series: [
         {
           name: "2021",
-          data: [7, 8, 10, 8, 7, 5, 6, 17, 9]
+          data: [7, 8, 10, 8, 7, 5, 6, 10, 9]
         },
         {
           name: "2022",

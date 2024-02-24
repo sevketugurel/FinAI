@@ -9,6 +9,7 @@ import { AlertDialogComponent } from '../dialogs/alert-dialog/alert-dialog.compo
 import { MatMenuModule, MatMenuTrigger } from '@angular/material/menu';
 import { UserMenuDialogComponent } from '../dialogs/user-menu-dialog/user-menu-dialog.component';
 import { routes } from '../app.routes';
+import { LoginService } from '../services/login.service';
 
 
 @Component({
@@ -19,30 +20,65 @@ import { routes } from '../app.routes';
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
-  goToDashboard() {
-    this._routes.navigateByUrl("dashboard")
-  }
-  openDialog() {
-    this._dialog.open(AlertDialogComponent)
-  }
-  openDialogStock() {
-    this._dialog.open(AlertDialogComponent);
-  }
-  constructor(private _routes: Router, private _dialog: MatDialog) { }
+  
+  constructor(private _routes: Router, private _dialog: MatDialog, private _loginService: LoginService) { }
+
   goToFollows() {
-    this._routes.navigateByUrl("followed")
+    if (this._loginService.isLogin) {
+      this._routes.navigateByUrl("followed");
+    } else {
+      this.showLoginAlert();
+    }
   }
+
   goToMarktes() {
-    this._routes.navigateByUrl("markets")
+    console.log(this._loginService.isLogin);
+
+    if (this._loginService.isLogin) {
+      this._routes.navigateByUrl("markets");
+    } else {
+      this.showLoginAlert();
+    }
+  }
+
+  goToDashboard() {
+    if (this._loginService.isLogin) {
+      this._routes.navigateByUrl("dashboard");
+    } else {
+      this.showLoginAlert();
+    }
+  }
+
+  openDialog() {
+    if (this._loginService.isLogin) {
+      this._dialog.open(AlertDialogComponent);
+    } else {
+      this.showLoginAlert();
+    }
+  }
+
+  openDialogStock() {
+    if (this._loginService.isLogin) {
+      this._dialog.open(AlertDialogComponent);
+    } else {
+      this.showLoginAlert();
+    }
+  }
+
+  openDialogUser() {
+    if (this._loginService.isLogin) {
+      this._routes.navigateByUrl("login")
+      this._loginService.isLogin = false
+    } else {
+      this.showLoginAlert();
+    }
+  }
+
+  private showLoginAlert() {
+    alert("Lütfen önce giriş yapınız!");
   }
   @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger | undefined;
 
 
-  openDialogUser() {
-    const dialogRef = this._dialog.open(UserMenuDialogComponent, { restoreFocus: false });
 
-    // Manually restore focus to the menu trigger since the element that
-    // opens the dialog won't be in the DOM any more when the dialog closes.
-    dialogRef.afterClosed().subscribe(() => this.menuTrigger?.focus());
-  }
 }

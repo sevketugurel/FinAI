@@ -8,16 +8,17 @@ import { Router } from '@angular/router';
 import { LoginService } from '../services/login.service';
 import { log } from 'console';
 import { RegisterModel } from '../models/register-form.interface';
+import { SidebarComponent } from "../sidebar/sidebar.component";
 
 @Component({
   selector: 'app-login-page',
   standalone: true,
-  imports: [MatInputModule, MatFormFieldModule, MatIconModule, MatButtonModule, ReactiveFormsModule,],
   templateUrl: './login-page.component.html',
-  styleUrl: './login-page.component.scss'
+  styleUrl: './login-page.component.scss',
+  imports: [MatInputModule, MatFormFieldModule, MatIconModule, MatButtonModule, ReactiveFormsModule, SidebarComponent]
 })
 export class LoginPageComponent {
-  isLogin = false;
+  isLogin: Boolean = false;
   emailFormControl: any;
   passwordFormControl: any;
   constructor(private _router: Router, private _loginService: LoginService) { }
@@ -33,11 +34,15 @@ export class LoginPageComponent {
 
   isDisable(): boolean {
     return !(this.emailFormControl.valid && this.passwordFormControl.valid);
+
   }
 
   clickedSignIn() {
     this.login();
-    if (this.isLogin) { this._router.navigateByUrl("sidebar"); this.isLogin = false }
+    if (this.isLogin) {
+      this._router.navigateByUrl("dashboard");
+      this._loginService.isLogin = true;
+    }
   }
 
   login() {

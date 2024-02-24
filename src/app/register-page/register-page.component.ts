@@ -8,14 +8,15 @@ import { Router } from '@angular/router';
 import { RegisterModel } from '../models/register-form.interface';
 import { LoginService } from '../services/login.service';
 import { GlobalKeys } from '../models/global-keys.enum';
+import { SidebarComponent } from "../sidebar/sidebar.component";
 
 
 @Component({
-  selector: 'app-register-page',
-  standalone: true,
-  imports: [MatInputModule, MatFormFieldModule, MatIconModule, MatButtonModule, ReactiveFormsModule],
-  templateUrl: './register-page.component.html',
-  styleUrl: './register-page.component.scss'
+    selector: 'app-register-page',
+    standalone: true,
+    templateUrl: './register-page.component.html',
+    styleUrl: './register-page.component.scss',
+    imports: [MatInputModule, MatFormFieldModule, MatIconModule, MatButtonModule, ReactiveFormsModule, SidebarComponent]
 })
 export class RegisterPageComponent {
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);

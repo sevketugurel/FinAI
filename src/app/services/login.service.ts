@@ -8,7 +8,7 @@ import { GlobalKeys } from '../models/global-keys.enum';
 export class LoginService {
 
   constructor() { }
-  
+  isLogin:Boolean = false;
 
   login(payload: any){
     localStorage.setItem(GlobalKeys.LOGIN,payload)
