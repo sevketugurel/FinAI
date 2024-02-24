@@ -9,26 +9,44 @@ import { MatInputModule } from '@angular/material/input';
   selector: 'app-alert-setup-dialog',
   standalone: true,
   imports: [
-    MatFormFieldModule,
-    MatInputModule,
-    FormsModule,
-    MatButtonModule,
     MatDialogTitle,
     MatDialogContent,
     MatDialogActions,
     MatDialogClose,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    MatButtonModule,
   ],
   templateUrl: './alert-setup-dialog.component.html',
-  styleUrl: './alert-setup-dialog.component.scss'
+  styleUrls: ['./alert-setup-dialog.component.scss']
 })
 export class AlertSetupDialogComponent {
-  alarmKur() {
-    alert("Tebrikler,alarm başarıyla kuruldu.")
-  }
+  alertData: AlertData[] = [];
+
   constructor(
     public dialogRef: MatDialogRef<AlertSetupDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData,
-  ) { }
+  ) {
+    const jsonData = JSON.stringify({ name: data.name, price: data.price });
+    this.alertData.push(JSON.parse(jsonData));
+  }
+
+  alarmKur() {
+    const obj = JSON.stringify(this.editedStockList());
+    localStorage.setItem("alertData", obj);
+    alert("Tebrikler, alarm başarıyla kuruldu.");
+  }
+
+  editedStockList() {
+    const stocks = this.getStock() || [];
+    stocks.push(...this.alertData);
+    return stocks;
+  }
+
+  getStock() {
+    return JSON.parse(localStorage.getItem("alertData")!) || [];
+  }
 
   onNoClick(): void {
     this.dialogRef.close();
@@ -36,6 +54,11 @@ export class AlertSetupDialogComponent {
 }
 
 export interface DialogData {
-  animal: string;
   name: string;
+  price: number;
+}
+
+export interface AlertData {
+  name: string;
+  price: number;
 }

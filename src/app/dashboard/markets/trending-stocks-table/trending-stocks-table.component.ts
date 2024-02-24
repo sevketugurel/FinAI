@@ -29,13 +29,13 @@ export class TrendingStocksTableComponent {
 
   constructor(public dialog: MatDialog) {}
 
-  openDialogAlert(): void {
-    console.log("tiklandi");
+  openDialogAlert(element: any): void {
     
     const dialogRef = this.dialog.open(AlertSetupDialogComponent, {
+      data: {name: element.name, price: element.price},
     });
-
-    dialogRef.afterClosed().subscribe((result: any) => {
+    
+    dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });
   }
@@ -139,3 +139,9 @@ const ELEMENT_DATA: PeriodicElement[] = [
         two-thirds the density of air.`,
   },
 ];
+export interface Stocks {
+  name: string;
+  price: number;
+  changing: number;
+
+}

@@ -3,10 +3,10 @@
   <p>Hangi fiyata alarm kurmak istiyorsunuz?</p>
   <mat-form-field>
     <mat-label>Fiyat</mat-label>
-    <input matInput [(ngModel)]="data.animal">
+    <input matInput [(ngModel)]="data.price">
   </mat-form-field>
 </mat-dialog-content>
 <mat-dialog-actions>
   <button mat-button (click)="onNoClick()">Çıkış</button>
-  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial (click)="alarmKur()">Alarm Kur</button>
+  <button mat-button [mat-dialog-close]="data.price" cdkFocusInitial (click)="alarmKur()">Alarm Kur</button>
 </mat-dialog-actions>

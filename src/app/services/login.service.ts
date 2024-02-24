@@ -7,27 +7,24 @@ import { GlobalKeys } from '../models/global-keys.enum';
 })
 export class LoginService {
 
-  constructor() { }
-  isLogin:Boolean = false;
+  isLogin: boolean = false;
 
-  login(payload: any){
-    localStorage.setItem(GlobalKeys.LOGIN,payload)
+  constructor() { }
+
+  login(payload: any) {
+    localStorage.setItem(GlobalKeys.LOGIN, JSON.stringify(payload));
+    this.isLogin = true; 
   }
 
   register(payload: RegisterModel) {
-    // console.log("payload:",payload);
-    // console.log("getUsers:",this.getUsers());
-    let userList = this.getUsers() ? this.getUsers() : [];
-    // console.log(userList);
+    let userList = this.getUsers() || [];
     userList.push(payload);
     const obj = JSON.stringify(userList);
     localStorage.setItem(GlobalKeys.REGISTER, obj);
   }
   
   getUsers() {
-    const users = JSON.parse(localStorage.getItem(GlobalKeys.REGISTER)!) || []; // Use an empty array if the stored data is null or undefined
+    const users = JSON.parse(localStorage.getItem(GlobalKeys.REGISTER) || '[]');
     return users;
   }
-  
-  
 }

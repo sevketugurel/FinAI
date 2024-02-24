@@ -30,20 +30,18 @@ export class FollowedComponent {
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }
-  animal: string="";
-  name: string="";
 
   constructor(public dialog: MatDialog) {console.log(this.stocks);
   }
 
-  openDialogAlert(): void {
+  openDialogAlert(element: any): void {
+    
     const dialogRef = this.dialog.open(AlertSetupDialogComponent, {
-      data: {name: this.name, animal: this.animal},
+      data: {name: element.name, price: element.price},
     });
     
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      this.animal = result;
     });
   }
   
