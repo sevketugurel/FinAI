@@ -18,7 +18,7 @@ import { SidebarComponent } from "../sidebar/sidebar.component";
   imports: [MatInputModule, MatFormFieldModule, MatIconModule, MatButtonModule, ReactiveFormsModule, SidebarComponent]
 })
 export class LoginPageComponent {
-  isLogin: Boolean = true;
+  isLogin: Boolean = false;
   emailFormControl: any;
   passwordFormControl: any;
   constructor(private _router: Router, private _loginService: LoginService) { }

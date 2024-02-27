@@ -22,22 +22,29 @@ import { AlertSetupDialogComponent } from '../../../dialogs/alert-setup-dialog/a
 export class HighestVolumeTableComponent {
   constructor(public dialog: MatDialog) {}
 
-  openDialogAlert(): void {
+  openDialogAlert(element: any): void {
+    
     const dialogRef = this.dialog.open(AlertSetupDialogComponent, {
-      
+      data: {name: element.name, price: element.price},
     });
     
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      
     });
   }
+
+
   dataSource = ELEMENT_DATA;
   columnsToDisplay = ['name', 'weight', 'symbol', 'position'];
   columnsToDisplayWithExpand = [...this.columnsToDisplay, 'expand'];
   expandedElement: PeriodicElement | any;
 }
+export interface Stocks {
+  name: string;
+  price: number;
+  changing: number;
 
+}
 export interface PeriodicElement {
   name: string;
   position: number;

@@ -27,19 +27,26 @@ export class TopLosersTableComponent {
   columnsToDisplayWithExpand = [...this.columnsToDisplay, 'expand'];
   expandedElement: PeriodicElement | any;
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog) {}
 
-  openDialogAlert(): void {
-    console.log("tiklandi");
-
+  openDialogAlert(element: any): void {
+    
     const dialogRef = this.dialog.open(AlertSetupDialogComponent, {
+      data: {name: element.name, price: element.price},
     });
-
-    dialogRef.afterClosed().subscribe((result: any) => {
+    
+    dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });
   }
 }
+export interface Stocks {
+  name: string;
+  price: number;
+  changing: number;
+
+}
+
 
 export interface PeriodicElement {
   name: string;
