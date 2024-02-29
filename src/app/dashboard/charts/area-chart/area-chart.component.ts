@@ -27,7 +27,7 @@ export type ChartOptions = {
   styleUrl: './area-chart.component.scss'
 })
 export class AreaChartComponent {
-  @ViewChild("chart") chart: ChartComponent|any;
+  @ViewChild("chart") chart?: ChartComponent;
   public chartOptions: Partial<ChartOptions>;
 
   constructor() {

@@ -36,7 +36,7 @@ export type ChartOptions = {
     imports: [NgApexchartsModule]
 })
 export class ColumnChartComponent {
-  @ViewChild("chart") chart: ChartComponent|any;
+  @ViewChild("chart") chart?: ChartComponent;
   public chartOptions: Partial<ChartOptions>;
 
   constructor() {
